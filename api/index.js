@@ -1,17 +1,24 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+import userRoutes from './routes/user.route.js';
+import authRoutes from './routes/auth.route.js';
+
 const app = express();
-dotenv.config()
+app.use(express.json());
+
+// تحميل الإعدادات من ملف .env
+dotenv.config();
+
 // MongoDB connection URL
 const mongoURI = process.env.MONGO;
 
-// Connect to MongoDB using mongoose
+// الاتصال بـ MongoDB باستخدام Mongoose
 mongoose.connect(mongoURI)
   .then(() => {
     console.log("MongoDB connected");
 
-    // Start the Express server only after MongoDB connection is successful
+    // بدء الخادم بعد الاتصال الناجح بـ MongoDB
     app.listen(3000, () => {
       console.log("Server is running on port 3000");
     });
@@ -19,3 +26,7 @@ mongoose.connect(mongoURI)
   .catch(err => {
     console.log("MongoDB connection error:", err);
   });
+
+// ربط المسارات
+app.use('/api/user', userRoutes);
+app.use('/api/auth', authRoutes);
