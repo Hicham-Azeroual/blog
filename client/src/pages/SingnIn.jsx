@@ -64,7 +64,7 @@ export default function SignIn() {
   
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 py-12 px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center  dark:bg-gray-900 py-12 px-6 lg:px-8">
       <div className="w-full max-w-4xl bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 md:flex-row flex-col gap-8 flex">
         <div className="flex-1 flex flex-col items-center md:items-start">
           <Link to="/" className="flex items-center whitespace-nowrap text-lg font-semibold text-gray-800 dark:text-gray-200 transition-opacity duration-150 hover:opacity-90">
