@@ -12,7 +12,8 @@ export default function Header() {
         className="flex items-center whitespace-nowrap text-lg font-semibold dark:text-white hover:opacity-90 transition-opacity duration-150"
       >
         <img
-          src="https://files.oaiusercontent.com/file-kESpRwyr4ScEbgOlePGO01dz?se=2024-11-08T08%3A07%3A41Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3De1e76f65-59ef-4a4c-a250-443c51ff4950.webp&sig=Jp3LclKgtHfjGbKxgzLTy/Etf/KcWYJ7rocyX7uy4Hc%3D"
+          src="https://www.shutterstock.com/image-illustration/illustration-blog-chat-bubble-on-260nw-717654691.jpg"
+          
           alt="Logo"
           className="w-14 h-14 mr-2 rounded-full object-cover shadow-sm" // Image styling
         />
