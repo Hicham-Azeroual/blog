@@ -1,6 +1,7 @@
 import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import QAuth from "../components/QAuth";
 
 export default function SignUP() {
   const [formData, setFormData] = useState({
@@ -122,6 +123,7 @@ export default function SignUP() {
             <Button gradientDuoTone="purpleToPink" type="submit" className="w-full mt-4 py-3 text-lg font-semibold bg-gradient-to-r from-blue-400 via-purple-300 to-pink-400 bg-cover">
               {isLoading ? <Spinner size="sm" light={true} /> : 'Sign Up'}
             </Button>
+            <QAuth></QAuth>
           </form>
           <div className="flex justify-center gap-2 text-sm mt-5 text-gray-700 dark:text-gray-300">
             <span>Already have an account?</span>
