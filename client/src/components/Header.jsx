@@ -1,17 +1,16 @@
 import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
 import { Link, useLocation } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
-import { FaMoon } from "react-icons/fa";
+import { FaMoon,FaSun } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-
+import {toggleTheme} from '../redux/theme/themeSlice.js'
 export default function Header() {
   const path = useLocation().pathname;
   const { currentUser } = useSelector((state) => state.user);
+  const {theme}=useSelector((state)=>state.theme)
   const dispatch = useDispatch();
-   console.log(currentUser);
-   
   console.log(currentUser);
-  
+  console.log(currentUser);
   const handleSignout = async () => {
     try {
       const res = await fetch("/api/user/signout", {
@@ -56,8 +55,16 @@ export default function Header() {
 
       <div className="flex items-center gap-4 md:order-2">
         {/* Dark Mode Toggle */}
-        <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
-          <FaMoon className="text-gray-500 dark:text-gray-200 hover:text-indigo-500 transition-colors duration-150" />
+        <Button
+          className="w-12 h-10 hidden sm:inline"
+          color="gray"
+          pill
+          onClick={() => {
+            dispatch(toggleTheme());
+          }}
+          
+        >
+          {theme==='light'?<FaSun></FaSun>:<FaMoon></FaMoon>}
         </Button>
 
         {/* User Dropdown */}
