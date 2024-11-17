@@ -14,13 +14,14 @@ function QAuth() {
         provider.setCustomParameters({prompt:'select_account'})
         try {
             const resultsFormGoogle=await signInWithPopup(auth,provider)
+            
             const res = await fetch ('/api/auth/google',{
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({
                     name:resultsFormGoogle.user.displayName,
                     email:resultsFormGoogle.user.email,
-                    googlePhotoURL:resultsFormGoogle.user.photoURL
+                    googlePhotoUrl: resultsFormGoogle.user.photoURL
                 })
             })
             const data=await res.json()
