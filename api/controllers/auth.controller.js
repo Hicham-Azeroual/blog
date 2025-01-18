@@ -60,7 +60,7 @@ export const signin = async (req, res, next) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign(
+    const token = jwt.sign( 
       { id: validUser._id, isAdmin: validUser.isAdmin }, // payload
       process.env.JWT_SECRET, // secret key from environment variable
       { expiresIn: '1h' } // optional: set token expiry time

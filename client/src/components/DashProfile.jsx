@@ -20,7 +20,7 @@ import {
   deleteUserSuccess,
   deleteUserFailure,
   signoutSuccess,
-} from "../redux/user/userSclice";
+}from "../redux/user/userSclice";
 import { useDispatch } from "react-redux";
 export default function DashProfile() {
   const { currentUser, error, loading } = useSelector((state) => state.user);

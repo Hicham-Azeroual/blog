@@ -9,7 +9,7 @@ const router = express.Router();
 router.get("/test", test);
 router.put("/update/:userId",verifyToken,updateUser);
 router.delete("/delete/:userId",verifyToken,deleteUser);
-router.get("/signout",signout);
+router.post('/signout',signout);
 
 // تصدير الـ router ليتم استخدامه في ملفات أخرى
 export default router;

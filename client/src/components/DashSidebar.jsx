@@ -7,6 +7,9 @@ import {
   HiAnnotation,
   HiChartPie,
 } from 'react-icons/hi';
+import {
+  signoutSuccess,
+}from "../redux/user/userSclice";
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -33,7 +36,9 @@ export default function DashSidebar() {
       if (!res.ok) {
         console.log(data.message);
       } else {
-        console.log('sign out success')
+               dispatch(signoutSuccess());
+       
+
       }
     } catch (error) {
       console.log(error.message);
